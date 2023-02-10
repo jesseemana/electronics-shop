@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-primary;
+    }
+
+    .nav-icons {
+        @apply text-lg md:text-2xl text-[#ffffff]
+    }
+}
