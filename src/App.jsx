@@ -10,6 +10,8 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails';
 
+// REACT TOSTIFY 
+
 const App = () => {
   const [loading, setLoading] = useState(true);
 
