@@ -12,7 +12,7 @@ export const Footer = () => {
   });
 
   return (
-    <section id='footer' className='flex flex-col md:flex-row justify-between px-10 bg-[rgb(33,171,165)]  w-full p-5 text-[#FFFFFF]'>
+    <section id='footer' className='flex flex-col gap-y-20 md:flex-row justify-between px-10 bg-[rgb(33,171,165)]  w-full p-5 text-[#FFFFFF]'>
       <div className='flex flex-col gap-y-10 md:flex-row gap-x-[170px]'>
         <div>
           <h1 className='text-[22px] capitalize'>shop by category</h1>
@@ -78,10 +78,11 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
+
       {/* SOCIALS SECTION */}
-      <div className='flex flex-col'>
+      <div className='flex flex-col items-center md:items-end'>
         {/* icons */}
-        <div className='flex gap-x-3 justify-end'>
+        <div className='flex gap-x-3 md:justify-end'>
           <div className='bg-[#1D566E] rounded-full px-2 py-2'>
             <a href='#'>
               <BsTwitter className='text-xl text-[#21ABA5]' />
@@ -103,8 +104,10 @@ export const Footer = () => {
             </a>
           </div>
         </div>
-        {/* location */}
-        {/* copyright all rights reserved */}
+
+        {/* LOCATION*/ }
+        
+        {/* COPYRIGHT AND ALL RIGHTS RESERVED */}
         <p className='text-lg capitalize'>
           {' '}
           &copy; {year} | Shopperz all rigths reserved{' '}

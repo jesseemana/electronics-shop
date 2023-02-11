@@ -113,6 +113,8 @@ export const ProductDetails = () => {
             )
           })}
         </div>
+
+        {/* PRODUCT RECOMMENDATIONS CAROUSEL  */}
       </div>
     </div>
   );
