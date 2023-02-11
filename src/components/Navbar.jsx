@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search } from './Search';
 import { Link } from 'react-router-dom';
 import { BiHeart, BiUser } from 'react-icons/bi';
@@ -32,7 +31,7 @@ export const Navbar = () => {
               0
             </span>
           </Link>
-          <Link to='/login'>
+          <Link to='/user'>
             <BiUser className='nav-icons' />
           </Link>
         </div>

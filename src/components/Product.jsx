@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BiHeart } from 'react-icons/bi';
 
 export const Product = ({ item }) => {

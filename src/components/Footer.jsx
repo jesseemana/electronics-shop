@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BsTwitter, BsInstagram, BsFacebook, BsYoutube } from 'react-icons/bs';
 
 // absolute bottom-0 right-0
@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className='flex flex-col gap-y-10 md:flex-row gap-x-[170px]'>
         <div>
           <h1 className='text-[22px] capitalize'>shop by category</h1>
-          <ul className='capitalize'>
+          <ul className='capitalize text-gray-300'>
             <li>
               <a href=''>phones</a>
             </li>
@@ -39,7 +39,7 @@ export const Footer = () => {
         </div>
         <div>
           <h1 className='text-[22px] capitalize'>about</h1>
-          <ul className='capitalize'>
+          <ul className='capitalize text-gray-300'>
             <li>
               <a href=''>contact us</a>
             </li>
@@ -56,7 +56,7 @@ export const Footer = () => {
         </div>
         <div>
           <h1 className='text-[22px] capitalize'>policy</h1>
-          <ul className='capitalize'>
+          <ul className='capitalize text-gray-300'>
             <li>
               <a href=''></a>return policy
             </li>

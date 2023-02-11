@@ -1,16 +1,15 @@
-import React from 'react';
 import laptop from '../assets/thinkpad.webp';
 
 export const Banner = () => {
   return (
-    <div className='bg-[#21ABA5] h-[450px]'>
+    <div className='bg-[#21ABA5]'>
       {/* slide number 1  */}
-      <div className='flex justify-around py-7'>
-        <div className='flex flex-col mt-[90px] gap-y-5 mr-[360px] absolute'>
-          <h1 className='text-[#ffffff] uppercase text-5xl font-bold z-10'>
+      <div className='flex items-center justify-around py-10 px-3'>
+        <div className='flex flex-col gap-y-5'>
+          <h1 className='text-[#1D566E] uppercase text-7xl font-bold z-10'>
             get the best deals on electronics.
           </h1>
-          <h1 className='text-[#ffffff] uppercase text-5xl font-[600] z-10'>
+          <h1 className='text-gray-200 uppercase text-5xl font-[600] z-10'>
             mega summer sale
           </h1>
           <p className='text-[#ffffff] uppercase text-3xl font-semibold z-10'>
@@ -23,8 +22,8 @@ export const Banner = () => {
             learn more
           </button>
         </div>
+        <img src={laptop} alt='lenovo thikpad' className='h-[400px] relative' />
 
-        <img src={laptop} alt='lenovo thikpad' className='h-[400px] ml-[750px] relative' />
       </div>
       {/* slide number 2  */}
     </div>

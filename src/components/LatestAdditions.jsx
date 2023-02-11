@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 import { dummydata } from '../dummydata';
 import { Product } from './Product';
 
-console.log(dummydata);
+// console.log(dummydata);
 
 export const LatestAdditions = () => {
   return (
