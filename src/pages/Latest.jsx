@@ -7,10 +7,10 @@ export const Latest = () => {
       <div className='flex items-center gap-x-2 py-5 uppercase text-sm text-gray-500'>
         <Link to='/'>Home</Link>
         <FaAngleRight/>
-        <h1>Latest Additions</h1>
+        <h1>new arrivals</h1>
       </div>
 
-      <h1 className='h-[100vh] uppercase text-center text-5xl flex items-center justify-center' >Latest Additions</h1>
+      <h1 className='h-[100vh] text-center text-5xl flex items-center justify-center' >new arrivals</h1>
       
     </div>
   );

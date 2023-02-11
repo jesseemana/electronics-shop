@@ -7,9 +7,9 @@ import { Product } from './Product';
 
 export const LatestAdditions = () => {
   return (
-    <section id='latest additions' className='px-10 py-10'>
-      <div className='flex justify-between capitalize font-bold text-2xl text-gray-700'>
-        <h1>latest additions</h1>
+    <section id='latest additions' className='px-4 md:px-10 py-10'>
+      <div className='flex justify-between capitalize font-bold text-xl md:text-2xl text-gray-700'>
+        <h1>new arrivals</h1>
 
         <Link to='/latest' className='flex items-center gap-x-3'>
           <p>view more</p>
@@ -17,7 +17,7 @@ export const LatestAdditions = () => {
         </Link>
       </div>
 
-      <div className='flex gap-x-10 py-5'>
+      <div className='flex gap-x-10 py-5 overflow-x-scroll scroll'>
         {dummydata?.map((item) => {
           return (
             <div key={item.id}>

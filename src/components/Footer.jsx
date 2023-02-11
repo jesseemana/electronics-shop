@@ -12,8 +12,9 @@ export const Footer = () => {
   });
 
   return (
-    <section id='footer' className='flex flex-col gap-y-20 md:flex-row justify-between px-10 bg-[rgb(33,171,165)]  w-full p-5 text-[#FFFFFF]'>
-      <div className='flex flex-col gap-y-10 md:flex-row gap-x-[170px]'>
+    <section id='footer'
+      className='flex flex-col gap-y-20 md:flex-row justify-between py-10 px-10 bg-[rgb(33,171,165)]  w-full text-[#FFFFFF]'>
+      <div className='flex flex-col gap-y-10 md:flex-row gap-x-[80px]'>
         <div>
           <h1 className='text-[22px] capitalize'>shop by category</h1>
           <ul className='capitalize text-gray-300'>
@@ -85,22 +86,22 @@ export const Footer = () => {
         <div className='flex gap-x-3 md:justify-end'>
           <div className='bg-[#1D566E] rounded-full px-2 py-2'>
             <a href='#'>
-              <BsTwitter className='text-xl text-[#21ABA5]' />
+              <BsTwitter className='text-lg md:text-xl text-[#21ABA5]' />
             </a>
           </div>
           <div className='bg-[#1D566E] rounded-full px-2 py-2'>
             <a href='#'>
-              <BsInstagram className='text-xl text-[#21ABA5]' />
+              <BsInstagram className='text-lg md:text-xl text-[#21ABA5]' />
             </a>
           </div>
           <div className='bg-[#1D566E] rounded-full px-2 py-2'>
             <a href='#'>
-              <BsFacebook className='text-xl text-[#21ABA5]' />
+              <BsFacebook className='text-lg md:text-xl text-[#21ABA5]' />
             </a>
           </div>
           <div className='bg-[#1D566E] rounded-full px-2 py-2'>
             <a href='#'>
-              <BsYoutube className='text-xl text-[#21ABA5]' />
+              <BsYoutube className='text-lg md:text-xl text-[#21ABA5]' />
             </a>
           </div>
         </div>
@@ -108,7 +109,7 @@ export const Footer = () => {
         {/* LOCATION*/ }
         
         {/* COPYRIGHT AND ALL RIGHTS RESERVED */}
-        <p className='text-lg capitalize'>
+        <p className='text-ms md:text-md lg:text-lg capitalize text-center'>
           {' '}
           &copy; {year} | Shopperz all rigths reserved{' '}
         </p>

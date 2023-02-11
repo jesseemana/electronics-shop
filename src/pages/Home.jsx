@@ -8,9 +8,9 @@ export const Home = () => {
   });
 
   return (
-    <div className=''>
+    <section id='home' className=''>
       <Banner />
       <LatestAdditions />
-    </div>
+    </section>
   );
 };

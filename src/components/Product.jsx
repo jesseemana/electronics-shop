@@ -4,9 +4,6 @@ import { BiHeart } from 'react-icons/bi';
 export const Product = ({ item }) => {
   const { image, price, name } = item;
 
-  // function addToCart() {
-  // }
-
   const addToCart = () => {
     alert('Item added to cart');
   };
@@ -15,12 +12,9 @@ export const Product = ({ item }) => {
     alert('Item added to favorites');
   };
 
-  // function addToFav() {
-  //   alert('Item added to favorites');
-  // }
 
   return (
-    <div className='py-4 px-1 flex flex-col gap-y-2 capitalize w-[250px] border border-gray-300 rounded-md '>
+    <div className='py-2 px-1 flex flex-col gap-y-2 capitalize w-[250px] border border-gray-300 rounded-sm'>
       <img src={image} alt={name} className='h-[150px] ' />
       <div className='px-3 flex flex-col gap-y-2'>
         <p className='text-xl font-semibold text-gray-800'>{name}</p>
