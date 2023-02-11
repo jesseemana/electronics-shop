@@ -5,5 +5,5 @@ export const Notfound = () => {
     document.title = 'Page Not Found';
   });
 
-  return <div>Page Not Found</div>;
+  return <div className='flex items-center justify-center text-5xl flex-col p-5 gap-y-4 h-[100vh]'>Page Not Found</div>;
 };

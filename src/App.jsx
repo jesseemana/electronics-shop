@@ -33,7 +33,7 @@ const App = () => {
             <Route path='/user' element={<UserAuth />} />
             <Route path='/favorites' element={<Favs />} />
             <Route path='/latest' element={<Latest />} />
-            <Route path='/productdetails' element={<ProductDetails />} />
+            <Route path='/product/:id' element={<ProductDetails />} />
           </Routes>
           <Footer />{' '}
         </div>
