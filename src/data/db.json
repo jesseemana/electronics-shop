@@ -1,0 +1,229 @@
+ [
+    {
+        "name": "samsung s22",
+        "itemno": 1,
+        "category": "phones",
+        "price": 950,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718261/e-commerce%20app/s22/580968-Product-0-I-637783601599414528_38eede7c-d761-4373-8e17-7bcb143272c7_467x_ru8rs3.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718268/e-commerce%20app/s22/580968-Product-1-I-637783601562539453_4c6c80c9-b507-4675-a652-69b4e9a8b043_467x_by9igg.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718261/e-commerce%20app/s22/580968-Product-5-I-637783601591914435_0ed2d040-b8b4-42ee-8bb2-5f5793b9ad04_467x_nxcgvq.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718260/e-commerce%20app/s22/580968-Product-2-I-637783601598945702_35860825-c3f0-46f1-98f8-84989322fc2e_467x_hnwdwa.webp"
+        ],
+        "desc": "an excellent powerfull smartphone with an amazing device and top notch perfomance",
+        "specs": [ "256GB internal storage", "12GB RAM", "100MP Camera", "Dynamic AMOLED 2X, 120Hz, HDR10+, 1750 nits (peak)", "Qualcomm SM8450 Snapdragon 8 Gen 1", "Android 12, upgradable to Android 13, One UI 5", "5G connectivity" ]
+    },
+    {
+        "name": "samsung a53 5G",
+        "itemno": 2,
+        "category": "phones",
+        "price": 300,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718128/e-commerce%20app/a53/586036-Product-0-I-637843402378925519_288cc9ed-5bff-4512-8959-9c0288bdabdb_467x_ccomw7.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718127/e-commerce%20app/a53/586036-Product-7-I-637843402377206755_824099aa-26a8-4448-a0e3-46dd8be37813_467x_igognh.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718127/e-commerce%20app/a53/586036-Product-1-I-637843402378300544_7994369d-cdd2-4a55-8bb5-c96c6cc79c0a_467x_g30t20.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718127/e-commerce%20app/a53/586036-Product-2-I-637843402377675499_832bf038-0545-4850-a28a-5cee5f90ddaf_467x_ss994p.webp"
+        ],
+        "desc": "a powerful midrange phone with cutting edge premium features but a good budget",
+        "specs": [ "126GB internal storage", "8GB RAM", "64MP Camera", "Super AMOLED, 120Hz, 800 nits (HBM)", "Exynos 1280 (5 nm)", "Android 12, upgradable to Android 13, One UI 5", "5G connectivity" ]
+    },
+    {
+        "name": "samsung a73 5G",
+        "itemno": 3,
+        "category": "phones",
+        "price": 450,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718175/e-commerce%20app/a73/586038-Product-0-I-637831944177653244_467x_prha4t.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718175/e-commerce%20app/a73/586038-Product-1-I-637831944178278243_467x_tlqfbf.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718175/e-commerce%20app/a73/586038-Product-2-I-637831944177496990_467x_ou9ngs.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718175/e-commerce%20app/a73/586038-Product-7-I-637831944177340767_467x_haws4i.webp"
+        ],
+        "desc": "a powerful midrange phone with cutting edge premium features but a good budget",
+        "specs": [ "126GB internal storage", "8GB RAM", "48MP Camera", "Super AMOLED Plus, 120Hz, 800 nits (HBM)", "Qualcomm SM7325 Snapdragon 778G 5G (6 nm)", "Android 12, upgradable to Android 13, One UI 5", "5G connectivity" ]
+    },
+    {
+        "name": "samsung z fold4",
+        "itemno": 4,
+        "category": "phones",
+        "price": 2000,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718532/e-commerce%20app/z-fold/598438-Product-3-I-637946000578069246_467x_ftq8zo.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718533/e-commerce%20app/z-fold/598438-Product-4-I-637946000577131745_467x_gkdwq2.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718532/e-commerce%20app/z-fold/598438-Product-5-I-637946000577131745_467x_jhdlrl.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718532/e-commerce%20app/z-fold/598438-Product-1-I-637946000577131745_467x_wdifft.webp"
+        ],
+        "desc": "an innovative powerful phone from samsung you can fold, cutting edge next gen tech with exceptional perfomance",
+        "specs": [ "512GB internal storage", "12GB Ram", "50MP camera", "Foldable Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (peak)", "Qualcomm SM8475 Snapdragon 8+ Gen 1 (4 nm)", "Android 12L, One UI 4.1.1", "5G connectivity" ]
+    },
+    {
+        "name": "google pixel 7 pro",
+        "itemno": 5,
+        "category": "phones",
+        "price": 950,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718199/e-commerce%20app/pixel-7/601382-Product-0-I-638007125267781761_467x_crgi7t.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718199/e-commerce%20app/pixel-7/601382-Product-1-I-637987420640556300_467x_r7itar.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718199/e-commerce%20app/pixel-7/601382-Product-3-I-638007125245750348_467x_fwpzw2.webp"
+        ],
+        "desc": "am awesome phone from google with an amazing software expirience and an amazing camera not found on any other phone",
+        "specs": [ "256GB internal storage", "8GB Ram", "50MP camera", "LTPO AMOLED, 120Hz, HDR10+, 1000 nits (HBM), 1500 nits (peak)", "Google Tensor G2 (5 nm)", "Android 13", "5G connectivity" ]
+    },
+    {
+        "name": "airpods",
+        "itemno": 6,
+        "category": "earphones",
+        "price": 200,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718732/e-commerce%20app/Airpods/552130-Product-0-I-637702420685225792_467x_c6ji87.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718733/e-commerce%20app/Airpods/552130-Product-4-I-637702420685382007_467x_gfdpa5.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718733/e-commerce%20app/Airpods/552130-Product-6-I-637702420685382007_467x_xhxheo.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718733/e-commerce%20app/Airpods/552130-Product-6-I-637702420685382007_467x_xhxheo.webp"
+        ],
+        "desc": "new airpods with unreal noise cancellation and an amazing sleek design",
+        "specs": [ "up to 100hrs playtime", "water proof", "case holds capacity for 4 full charges", "active noise cancellation" ]
+    },
+    {
+        "name": "JBL buds",
+        "itemno": 7,
+        "category": "earphones",
+        "price": 80,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719500/e-commerce%20app/jbl%20pods/586012-Product-0-I-637825099377217380_467x_gkavai.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719500/e-commerce%20app/jbl%20pods/586012-Product-3-I-637825099377217380_467x_cqywxe.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719500/e-commerce%20app/jbl%20pods/586012-Product-8-I-637825099377529941_467x_p8tuef.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719500/e-commerce%20app/jbl%20pods/586012-Product-4-I-637825099382842464_467x_pcqlni.webp"
+        ],
+        "desc": "wireless earbuds from JBL with unreal noise cancellation and an amazing sleek design",
+        "specs": [ "up to 100hrs playtime", "water proof", "case holds capacity for 4 full charges", "active noise cancellation" ]
+    },
+    {
+        "name": "samsung buds",
+        "itemno": 8,
+        "category": "earphones",
+        "price": 180,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718817/e-commerce%20app/earbuds/477033-Product-5-I-637320595273041477_467x_kr5w7q.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718817/e-commerce%20app/earbuds/477033-Product-0-I-637320595268506668_467x_iprb3v.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718820/e-commerce%20app/earbuds/477033-Product-2-I-637320595271635230_467x_bjlbe8.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718818/e-commerce%20app/earbuds/477033-Product-1-I-637320595270853972_467x_bjxufx.webp"
+        ],
+        "desc": "new earbuds from Samsung with unreal noise cancellation and an amazing sleek design",
+        "specs": [ "up to 100hrs playtime", "water proof", "case holds capacity for 4 full charges", "active noise cancellation" ]
+    },
+    {
+        "name": "beats ear buds",
+       " itemno": 9,
+        "category": "earphones",
+        "price": 190,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718783/e-commerce%20app/beats%20pods/530674-Product-0-I-637634873301249554_467x_ok8p1q.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718783/e-commerce%20app/beats%20pods/530674-Product-4-I-637634873301874557_467x_questv.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718783/e-commerce%20app/beats%20pods/530674-Product-1-I-637634873301249554_467x_pqlgyj.webp"
+        ],
+        "desc": "Beats earbuds from with awesome noise cancellation and an amazing sleek design",
+        "specs": [ "up to 100hrs playtime", "water proof", "case holds capacity for 4 full charges", "active noise cancellation" ]
+    },
+    {
+        "name": "beats",
+        "itemno": 10,
+        "category": "headphones",
+        "price": 250,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718859/e-commerce%20app/beats/475942-Product-3-I-637649741549761283_ae6204bd-cf6c-4fd9-ae6c-ce7f6045d2b8_467x_azzy9u.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718859/e-commerce%20app/beats/475942-Product-1-I-637649741549605053_3315ee9d-d8b5-477d-91ed-5d6b65fe0c95_467x_hahyoe.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718859/e-commerce%20app/beats/475942-Product-0-I-637649741549605053_46716149-d304-4784-9799-f8444bae4b87_467x_urdrl5.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718860/e-commerce%20app/beats/475942-Product-5-I-637931329377799234_467x_ayqb5v.jpg"
+        ],
+        "desc": "comfortable beats headphones with an amazing design and awessome sound quality",
+        "specs": [ "up to 100hrs playtime", "water proof", "noise cancellation" ]
+    },
+    {
+        "name": "beats 2",
+        "category": "headphones",
+        "itemno": 11,
+        "price": 150,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719473/e-commerce%20app/beats%20sm/440929-Product-0-I-637229812270999627_467x_mzg9xy.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719473/e-commerce%20app/beats%20sm/440929-Product-3-I-637229812268336773_467x_nfxwqf.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719472/e-commerce%20app/beats%20sm/440929-Product-5-I-637229812269118051_467x_pj1toj.webp"
+        ],
+        "desc": "comfortable beats headphones with an amazing design and awessome sound quality",
+        "specs": [ "up to 100hrs playtime", "water proof", "noise cancellation" ]
+    },
+    {
+        "name": "PS5 god of war ragnarok",
+        "itemno": 12,
+        "category": "gaming",
+        "price": 800,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723283/e-commerce%20app/ps5/610770-Product-0-I-638031536840629316_467x_osnkyf.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723283/e-commerce%20app/ps5/610770-Product-5-I-638031536840473104_467x_hd4j8k.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723283/e-commerce%20app/ps5/610770-Product-2-I-638031536840473104_467x_ldatbd.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723283/e-commerce%20app/ps5/610770-Product-3-I-638031536840473104_467x_w1yt4k.webp"
+        ],
+        "desc": "Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback1, adaptive triggers1 and 3D Audio",
+        "specs": [ "CPU: 8x Zen 2 Cores at 3.5GHz with SMT (variable frequency) ", "GPU: 10.28 teraflops with 36 compute units at 2.23GHz (variable frequency) vs 1.84 teraflops", "RAM: 16GB GDDR6/256-bit vs 8GB GDDR5", "Internal Storage: Custom 825GB SSD", "Expandable Storage: NVMe SSD Slot" ]
+    },
+    {
+        "name": "x box series s",
+        "itemno": 13,
+        "category": "gaming",
+        "price": 300,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723619/e-commerce%20app/xbox/487922-Product-2-I-637369914513274309_7c511799-3851-4e88-8992-17a0f7fda13e_903x_dvashk.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723619/e-commerce%20app/xbox/487922-Product-3-I-637568449289268923_f3d91632-2b9c-4bdd-b116-65e57a64ef47_903x_i7o8su.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723619/e-commerce%20app/xbox/487922-Product-1-I-637405974137447289_eaf5745b-d7d7-4426-9c8a-784e18265e51_903x_vyuegw.webp"
+        ],
+        "desc": "Introducing the Xbox Series S, the smallest, sleekest Xbox console ever. Experience the speed and performance of a next-gen all-digital console at an affordable prices.",
+        "specs": [
+            "CPU. 8X Cores @ 3.6 GHz (3.4 GHz w/SMT) Custom Zen 2 CPU",
+            "GPU. 4 TFLOPS, 20 CUs @1.565 GHz Custom RDNA 2 GPU",
+            "Internal Storage. 512GB Custom NVME SSD",
+            "1440p resolution with up to 120 FPS"
+        ]
+    },
+    {
+        "name": "LG UHD TV",
+        "itemno": 14,
+        "category": "tvs",
+        "price": 1000,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718657/e-commerce%20app/lg-uhd%20tv/588517-Product-0-I-637852698777739439_903x_hcvvxp.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718655/e-commerce%20app/lg-uhd%20tv/588517-Product-3-I-637852698777895802_903x_o8yvl7.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718655/e-commerce%20app/lg-uhd%20tv/588517-Product-4-I-637852698777739439_903x_jzs4ix.webp"
+        ],
+        "desc": "a smart tv by LG with 4k resolution and a bunch of cool apps pre installed",
+        "specs": [ "ultra slim desing", "3x HDMI port", "4k resolution", "65 inches", "Android 13" ]
+    },
+    {
+        "name": "samsung smart tv",
+        "itemno": 15,
+        "category": "tvs",
+        "price": 1000,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718681/e-commerce%20app/uhd%20tv/540902-Product-0-I-637729342622752206_903x_hqwgcq.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718682/e-commerce%20app/uhd%20tv/540902-Product-1-I-637729342594470930_903x_tefz9b.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718681/e-commerce%20app/uhd%20tv/540902-Product-8-I-637729342593377129_903x_tvbxik.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718681/e-commerce%20app/uhd%20tv/540902-Product-5-I-637729342593689630_903x_kxmytq.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718681/e-commerce%20app/uhd%20tv/540902-Product-0-I-637729342622752206_903x_hqwgcq.webp"
+        ],
+        "desc": "a smart tv by Samsung with 4k resolution and a bunch of cool apps pre installed",
+        "specs": [ "ultra slim desing", "3x HDMI port", "4k OLED display", "vivid dynamic colors", "42 inches", "Android 13" ]
+    },
+    {
+        "name": "lenovo thinkpad e15",
+        "itemno": 16,
+        "category": "laptops",
+        "price": 600,
+        "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/pw5jy11vn8u0jbi3rdu3aq1ij4bl15411237_nwp2ch.webp",
+        "images": [
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/pw5jy11vn8u0jbi3rdu3aq1ij4bl15411237_nwp2ch.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/nspn1wrs0l3cosodq850ss8hv0p5yy705197_baf3ob.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/g4nk5et79ttexxa6fx6ps2onyulvy3083181_r1lulz.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/1zkqoabvzhwrx9uh2p4cwi64tfb1k0528871_n2ez5z.webp",
+            "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/u80b4v17uyw5gc2s1shrqun8u7i7fm379839_rwmltz.webp"
+        ],
+        "desc": "ultra slim laptop with a sleek mordern design and cutting adge perfomance",
+        "specs": [ "Up to 11th Generation Intel® Core™ i7", "Lightning-fast Intel® Thunderbolt™ 4", " Windows 10 Pro", "15.6inch FHD(1920 x 1080) IPS, anti - glare, touchscreen" ]
+    }
+ ]

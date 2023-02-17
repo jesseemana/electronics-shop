@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { Home } from './pages/Home';
 import { Cart } from './pages/Cart';
 import { Favs } from './pages/Favs';
@@ -9,6 +9,9 @@ import { Notfound } from './pages/Notfound';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails';
+
+const Phones = lazy( () => './pages/Phones' );
+const Earphones = lazy(() => './pages/EarPhones');
 
 // REACT TOSTIFY 
 
