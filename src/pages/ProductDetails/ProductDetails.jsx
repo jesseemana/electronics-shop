@@ -1,7 +1,7 @@
 import { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { dummydata } from '../../dummydata';
-import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
+import { FaAngleRight, FaStar } from 'react-icons/fa';
 import toast from "react-hot-toast";
 import { MainContext } from '../../components/StoreContext';
 import { reducer } from './reducer';
@@ -22,7 +22,6 @@ const initialState = {
 
 export const ProductDetails = () => {
   const { id } = useParams();
-  const { setFavorites } = useContext( MainContext );
   const [ state, dispatch ] = useReducer( reducer, initialState );
 
   const new_dispatch = useDispatch()
