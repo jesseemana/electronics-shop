@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { MainContext } from '../components/StoreContext';
 
 export const Favs = () => {
-  const { favorites } = useContext( MainContext );
-  
-  // console.log( favorites );
+  const favorites = useSelector( state => state.storeState );
+
+  console.log( favorites );
 
   useEffect(() => {
     document.title = 'Favorites';
@@ -25,5 +26,7 @@ export const Favs = () => {
     );
   }
 
-  return <div>Favs</div>;
+  return <div>
+    
+  </div>;
 };

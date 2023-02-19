@@ -5,6 +5,8 @@ import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
 import toast from "react-hot-toast";
 import { MainContext } from '../../components/StoreContext';
 import { reducer } from './reducer';
+import { useDispatch } from 'react-redux';
+import { AddToFavs } from '../../features/storeSlice';
 
 
 // INITIAL COMPONENT STATE 
@@ -22,6 +24,8 @@ export const ProductDetails = () => {
   const { id } = useParams();
   const { setFavorites } = useContext( MainContext );
   const [ state, dispatch ] = useReducer( reducer, initialState );
+
+  const new_dispatch = useDispatch()
 
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
@@ -53,14 +57,13 @@ export const ProductDetails = () => {
   
 
   // ADDING ITEM TO CART 
-  const addToCart = () => {
+  const handleCart = () => {
     toast.success( 'added to cart' );
   };
 
   // ADDING ITEM TO FAVORITES 
-  const addToFavs = () => {
-    setFavorites( state.product );
-    localStorage.setItem( 'products', JSON.stringify( state.product ) );
+  const handleFavs = (item) => {
+    new_dispatch( AddToFavs( item) );
     toast.success( 'Added To Favorites' );
   };
 
@@ -115,17 +118,37 @@ export const ProductDetails = () => {
             <p className='capitalize'>quantity:</p>
               <div className='flex justify-around gap-x-1'>
                 {/* // setQuantity(prev => prev - 1) */}
-                <button disabled={!state.disablebtn} className='border px-3 rounded-sm' onClick={ () => dispatch( { type: 'decrement' } ) }>-</button> 
+                <button
+                  disabled={ !state.disablebtn }
+                  className='border px-3 rounded-sm'
+                  onClick={ () => dispatch( { type: 'decrement' } ) }>
+                  -
+                </button> 
                 {/* <input type="number" placeholder={ mystate.quantity } className='w-[40px] outline-none px-2' /> */ }
                 <p className='outline-none px-2 border'>{ state.quantity }</p>
-                <button className='border px-3 rounded-sm' onClick={ () => dispatch( { type: 'increment' } ) }>+</button>
+                <button
+                  className='border px-3 rounded-sm'
+                  onClick={ () => dispatch( { type: 'increment' } ) }
+                >
+                  +
+                </button>
             </div>
           </div>
 
           {/* ADD TO CART AND ADD TO FAVORITES BUTTONS  */ }
           <div className='flex gap-x-4'>
-            <button className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm' onClick={addToCart}>add to cart</button>
-            <button className='border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm' onClick={addToFavs}>add to favorites</button>
+              <button
+                className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm'
+                onClick={ () => handleCart }
+              >
+                add to cart
+              </button>
+              <button
+                className='border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'
+                onClick={ () => handleFavs( state.product ) }
+              >
+                add to favorites
+              </button>
           </div>
           </div>
         </div>
