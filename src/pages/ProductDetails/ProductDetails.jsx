@@ -1,10 +1,10 @@
 import { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { dummydata } from '../dummydata';
+import { dummydata } from '../../dummydata';
 import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
 import toast from "react-hot-toast";
-import { MainContext } from '../components/StoreContext';
-import { reducer } from '../reducer';
+import { MainContext } from '../../components/StoreContext';
+import { reducer } from './reducer';
 
 
 // INITIAL COMPONENT STATE 
