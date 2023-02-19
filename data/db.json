@@ -1,4 +1,5 @@
- [
+ { 
+  "schema": [
     {
         "name": "samsung s22",
         "itemno": 1,
@@ -225,5 +226,6 @@
         ],
         "desc": "ultra slim laptop with a sleek mordern design and cutting adge perfomance",
         "specs": [ "Up to 11th Generation Intel® Core™ i7", "Lightning-fast Intel® Thunderbolt™ 4", " Windows 10 Pro", "15.6inch FHD(1920 x 1080) IPS, anti - glare, touchscreen" ]
-    }
+    } 
  ]
+}

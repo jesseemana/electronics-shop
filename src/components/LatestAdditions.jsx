@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
+import { BiHeart } from 'react-icons/bi';
 import { dummydata } from '../dummydata';
 import { Product } from './Product';
 
 // console.log(dummydata);
+
 
 export const LatestAdditions = () => {
   return (
@@ -22,7 +24,7 @@ export const LatestAdditions = () => {
           return (
             <div key={item.id}>
               <Link to={`/product/${item.id}`}>
-                <Product item={item} />
+                <Product item={ item } />
               </Link>
             </div>
           );

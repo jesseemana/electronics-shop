@@ -9,6 +9,7 @@ import { Notfound } from './pages/Notfound';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Phones = lazy( () => './pages/Phones' );
 const Earphones = lazy(() => './pages/EarPhones');
@@ -40,7 +41,8 @@ const App = () => {
             <Route path='/latest' element={<Latest />} />
             <Route path='/product/:id' element={<ProductDetails />} />
           </Routes>
-          <Footer />{' '}
+          <Footer />
+          <Toaster />
         </div>
       )}
     </>

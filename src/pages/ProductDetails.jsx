@@ -2,11 +2,10 @@ import { useEffect, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { dummydata } from '../dummydata';
 import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
+import toast from "react-hot-toast";
 
 
-// ADD TO CART AND ADD TO FAVORITES TOASTS
-
-
+// REDUCER FUNCTION FOR HANDLING MULTIPLE COMPONENT STATE 
 const reducer = (state, action) => {
     switch ( action.type ) { 
       case 'increment':
@@ -28,6 +27,7 @@ const reducer = (state, action) => {
     }
 }
 
+// INITIAL COMPONENT STATE 
 const initialState = {
   product: {},
   title: '',
@@ -51,7 +51,7 @@ export const ProductDetails = () => {
 
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
-  const activateBtn = state.quantity <= 0
+  const activateBtn = state.quantity > 0
 
   useEffect( () => {
     if ( activateBtn ){
@@ -72,17 +72,18 @@ export const ProductDetails = () => {
   }, [id]);
   
 
+  // CHANING PAGE TITLE TO SELECTED ITEM
   useEffect(() => {
     document.title = state.title;
   });
   
 
   const addToCart = () => {
-    alert('Added To Cart');
+    toast.success( 'added to cart' );
   }
 
   const addToFavs = () => {
-    alert('Added To Favorites');
+    toast.success('Added To Favorites');
   }
 
   // console.log(state.quantity)
@@ -136,7 +137,7 @@ export const ProductDetails = () => {
             <p className='capitalize'>quantity:</p>
               <div className='flex justify-around gap-x-1'>
                 {/* // setQuantity(prev => prev - 1) */}
-                <button disabled={state.disablebtn} className='border px-3 rounded-sm' onClick={ () => dispatch( { type: 'decrement' } ) }>-</button> 
+                <button disabled={!state.disablebtn} className='border px-3 rounded-sm' onClick={ () => dispatch( { type: 'decrement' } ) }>-</button> 
                 {/* <input type="number" placeholder={ mystate.quantity } className='w-[40px] outline-none px-2' /> */ }
                 <p className='outline-none px-2 border'>{ state.quantity }</p>
                 <button className='border px-3 rounded-sm' onClick={ () => dispatch( { type: 'increment' } ) }>+</button>
@@ -153,11 +154,11 @@ export const ProductDetails = () => {
 
         {/* ITEM SPECS, WILL LATER BE A MUI ACCORDION  */}
         <div className='md:my-4 md:ml-10 '>
-          <h1 className='md:text-2xl text-gray-600 font-bold uppercase py-3'>key features</h1>
+          <h1 className='md:text-2xl text-gray-800 font-bold uppercase py-3'>key features</h1>
           { state.specs.map( (item, index )=> {
             return (
-              <ul key={ index } className='flex items-center ml-2 text-gray-500'>
-                <span><FaAngleRight /></span><li className={`before:content-['']`}>{ item }</li>
+              <ul key={ index } className='flex items-center text-gray-800'>
+                <li className={`before:content-['•'] before:mx-2 before:rounded-full`}>{ item }</li>
               </ul>
             )
           })}
