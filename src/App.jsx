@@ -9,7 +9,7 @@ import { Notfound } from './pages/Notfound';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 const Phones = lazy( () => './pages/Phones' );
 const Earphones = lazy(() => './pages/EarPhones');

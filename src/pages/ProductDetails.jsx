@@ -1,31 +1,11 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { dummydata } from '../dummydata';
 import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
 import toast from "react-hot-toast";
+import { MainContext } from '../components/StoreContext';
+import { reducer } from '../reducer';
 
-
-// REDUCER FUNCTION FOR HANDLING MULTIPLE COMPONENT STATE 
-const reducer = (state, action) => {
-    switch ( action.type ) { 
-      case 'increment':
-        return { ...state, quantity: state.quantity + 1 }
-      case 'decrement':
-        return { ...state, quantity: state.quantity - 1 }
-      case 'set_title':
-        return { ...state, title: action.value }
-      case 'set_product':
-        return { ...state, product: action.value }
-      case 'set_specs':
-        return { ...state, specs: action.value }
-      case 'set_category':
-        return { ...state, category: action.value }
-      case 'set_btn':
-        return {...state, disablebtn: action.value}
-      default:
-        return state
-    }
-}
 
 // INITIAL COMPONENT STATE 
 const initialState = {
@@ -39,27 +19,21 @@ const initialState = {
 
 
 export const ProductDetails = () => {
-  const {id} = useParams();
-
-  // const [ item, setItem ] = useState( {} );
-  // const [ title, setTitle ] = useState( '' );
-  // const [ specs, setSpecs ] = useState( [] );
-  // const [ quantity, setQuantity ] = useState( 0 );
-  // const [ category, setCategory ] = useState( '' );
-
-  const [state, dispatch] = useReducer( reducer, initialState );
+  const { id } = useParams();
+  const { setFavorites } = useContext( MainContext );
+  const [ state, dispatch ] = useReducer( reducer, initialState );
 
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
   const activateBtn = state.quantity > 0
 
   useEffect( () => {
-    if ( activateBtn ){
+    if ( activateBtn ) {
       dispatch( { type: 'set_btn', value: true } );
     } else {
       dispatch( { type: 'set_btn', value: false } );
     }
-  }, [activateBtn])
+  }, [ activateBtn ] );
   
 
 
@@ -78,16 +52,20 @@ export const ProductDetails = () => {
   });
   
 
+  // ADDING ITEM TO CART 
   const addToCart = () => {
     toast.success( 'added to cart' );
-  }
+  };
 
+  // ADDING ITEM TO FAVORITES 
   const addToFavs = () => {
-    toast.success('Added To Favorites');
-  }
+    setFavorites( state.product );
+    localStorage.setItem( 'products', JSON.stringify( state.product ) );
+    toast.success( 'Added To Favorites' );
+  };
 
-  // console.log(state.quantity)
-  // console.log(initialState.quantity)
+  // console.log(state.product);
+  // console.log(initialState.quantity);
   
   return (
     <div className='px-8 border-red-500 '>

@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MainContext } from '../components/StoreContext';
 
 export const Favs = () => {
-  const [fav, setFav] = useState([]);
+  const { favorites } = useContext( MainContext );
+  
+  // console.log( favorites );
 
   useEffect(() => {
     document.title = 'Favorites';
   });
 
-  if (fav.length <= 0) {
+  if (favorites.length <= 0) {
     return (
       <div className='flex items-center justify-center flex-col p-5 gap-y-4 h-[100vh]'>
         <div>NO SAVED ITEMS</div>
