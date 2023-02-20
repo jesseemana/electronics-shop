@@ -13,19 +13,12 @@ const cartSlice = createSlice( {
     name: 'storeSlice',
     initialState,
     reducers: {
-        // -------------------------- ACTION CREATORS FOR THE FAVORITES SECTION ----------------------------------
+        // ------------------------------ ACTION CREATORS FOR THE FAVORITES SECTION ------------------------------
         // 1. ADD TO FAVORITES 
         AddToFavs ( state, action ) {   
-            const itemIndex = state.favorites.findIndex( ( item ) => item.id === action.payload.id );
-
-            // console.log(itemIndex)
-
-            if ( itemIndex >= 0 ) {
-                state.itemExists = true;
-            } else {
-                const item = {...action.payload, itemExists: true}
-                state.favorites.push( item );
-            }
+            // COPYING THE EXISTING PRODUCT OBJECT THEN ADDING AN itemExists PROPERTY 
+            const item = { ...action.payload, itemExists: true };
+            state.favorites.push( item );
             
             localStorage.setItem( "favoriteItems", JSON.stringify( state.favorites ) );
         },

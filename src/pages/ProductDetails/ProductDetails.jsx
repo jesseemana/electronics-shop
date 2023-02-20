@@ -23,7 +23,6 @@ const initialState = {
 export const ProductDetails = () => {
   const { id } = useParams();
 
-  const [ addToFavsBtn, setAddToFavsBtn ] = useState( true );
   const [ favorites, setFavorites ] = useState( [] );
   const [ duplicate, setDuplicate ] = useState( false );
 
@@ -40,7 +39,7 @@ export const ProductDetails = () => {
 
 
   const item = favorites.find( ( item ) => item.id === itemId );
-  console.log( item );
+  // console.log( item );
   
   useEffect( () => {
     if ( item) {
@@ -162,21 +161,23 @@ export const ProductDetails = () => {
           </div>
 
           {/* ADD TO CART AND ADD TO FAVORITES BUTTONS  */ }
-          <div className='flex gap-x-4'>
-              <button
-                className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm'
-                onClick={ () => handleCart( state.product ) }
-              >
-                add to cart
-              </button>
-              <button
-                disabled={duplicate}
-                className={`${!addToFavsBtn ? 'cursor-not-allowed border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm' : 'border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
-                onClick={ () => handleFavs( state.product ) }
-              >
-                add to favorites
-              </button>
-          </div>
+            <div>
+              <div className='flex gap-x-4'>
+                <button
+                  className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm'
+                  onClick={ () => handleCart( state.product ) }
+                >
+                  add to cart
+                </button>
+                <button
+                  disabled={duplicate}
+                  className={`${duplicate ? 'cursor-not-allowed border border-gray-500 text-gray-500 capitalize w-full rounded-sm' : 'border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
+                  onClick={ () => handleFavs( state.product ) }
+                >
+                  add to favorites
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
