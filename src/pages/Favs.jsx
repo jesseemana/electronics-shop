@@ -47,7 +47,7 @@ export const Favs = () => {
       <div className='flex items-center gap-x-2 py-8 uppercase text-[12px] md:text-sm text-gray-500'>
         <Link to='/'>home</Link>
         <FaAngleRight/>
-        <Link to='/latest'>favorites</Link>
+        <h1>favorites</h1>
       </div>
 
       <div></div>
