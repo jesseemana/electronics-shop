@@ -1,6 +1,7 @@
 import {useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FaAngleRight } from 'react-icons/fa';
 
 export const Cart = () => {
   const [ cart, setCart ] = useState( [] );
@@ -32,5 +33,19 @@ export const Cart = () => {
     );
   }
 
-  return <div>Cart</div>;
+  return (
+    <div className='px-8'>
+      <div className='flex items-center gap-x-2 py-8 uppercase text-[12px] md:text-sm text-gray-500'>
+        <Link to='/'>home</Link>
+        <FaAngleRight/>
+        <h1>favorites</h1>
+      </div>
+
+      <h1 className='text-lg md:text-3xl text-center text-gray-600 font-semibold'>CART</h1>
+
+      <div>
+        
+      </div>
+    </div>
+  );
 };

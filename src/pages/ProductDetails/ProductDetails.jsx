@@ -4,7 +4,7 @@ import { dummydata } from '../../dummydata';
 import { FaAngleRight, FaStar } from 'react-icons/fa';
 import { reducer } from './reducer'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { addToFavs, addToCart } from '../../features/storeSlice';
+import { addToFavs, addToCart, decreaseCart, increaseCart } from '../../features/storeSlice';
 import toast from "react-hot-toast";
 
 
@@ -25,6 +25,7 @@ export const ProductDetails = () => {
   
   const [ favorites, setFavorites ] = useState( [] );
   const [ duplicate, setDuplicate ] = useState( false );
+  const [ itemQty, setItemQty ] = useState( 0 );
   const [ state, dispatch ] = useReducer( reducer, initialState );
   
   const new_dispatch = useDispatch();
@@ -38,20 +39,35 @@ export const ProductDetails = () => {
   
   const itemId = state.product.id;
 
+  // SETTING DUPLICATE TO TRUE IF THE ITEM ALREADY EXIST IN THE FAVORITES ARRAY 
   const item = favorites.find( ( item ) => item.id === itemId );
-  // console.log( item );
   
   useEffect( () => {
     if ( item ) {
       if ( item.itemExists ) {
         setDuplicate( true );
-      }
+      } 
     }
   }, [item] );
+
+
+  // SETTING THE CART ITEM COUNT STATE FOR THIS COMPONENT
+  const cartItem = storeState.cartItems.find( ( item ) => item.id === itemId );
+  const cartItemIndex = storeState.cartItems.findIndex( ( item ) => item.id === itemId );
+
+  useEffect( () => {
+    if ( cartItem ) {
+      // console(item.itemQuantity)
+      if ( cartItem.itemQuantity ) {
+        setItemQty( cartItem.itemQuantity );
+      }
+    }
+  }, [ storeState.cartItems[ cartItemIndex ] ] );
   
 
+
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
-  const activateBtn = state.quantity > 0
+  const activateBtn = itemQty > 0
 
   useEffect( () => {
     if ( activateBtn ) {
@@ -59,10 +75,12 @@ export const ProductDetails = () => {
     } else {
       dispatch( { type: 'set_btn', value: false } );
     }
-  }, [ activateBtn ] );
+  }, [ activateBtn ] ); 
   
 
 
+
+  // SETTING COMPONENT STATE COMING FROM THE REDUCER FUNCTION 
   useEffect(() => {
     const item = dummydata.find( ( item ) => item.id === parseInt( id ) );
     dispatch( { type: 'set_product', value: item } );
@@ -143,13 +161,13 @@ export const ProductDetails = () => {
                 <button
                   disabled={ !state.disablebtn }
                   className={ `${!activateBtn ? 'cursor-not-allowed border px-3 rounded-sm' : 'border px-3 rounded-sm'}`}
-                  onClick={ () => dispatch( { type: 'decrement' } ) }>
+                  onClick={ () => new_dispatch( decreaseCart( item ) ) }>
                   -
                 </button> 
-                <p className='outline-none px-2 border'>{ state.quantity }</p>
+                <p className='outline-none px-2 border'>{ itemQty }</p>
                 <button
                   className='border px-3 rounded-sm'
-                  onClick={ () => dispatch( { type: 'increment' } ) }
+                  onClick={ () => new_dispatch( increaseCart( item ) ) }
                 >
                   +
                 </button>

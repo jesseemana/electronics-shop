@@ -2,7 +2,7 @@
   "schema": [
     {
         "name": "samsung s22",
-        "itemno": 1,
+        "id": 1,
         "category": "phones",
         "price": 950,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718261/e-commerce%20app/s22/580968-Product-0-I-637783601599414528_38eede7c-d761-4373-8e17-7bcb143272c7_467x_ru8rs3.webp",
@@ -16,7 +16,7 @@
     },
     {
         "name": "samsung a53 5G",
-        "itemno": 2,
+        "id": 2,
         "category": "phones",
         "price": 300,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718128/e-commerce%20app/a53/586036-Product-0-I-637843402378925519_288cc9ed-5bff-4512-8959-9c0288bdabdb_467x_ccomw7.webp",
@@ -30,7 +30,7 @@
     },
     {
         "name": "samsung a73 5G",
-        "itemno": 3,
+        "id": 3,
         "category": "phones",
         "price": 450,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718175/e-commerce%20app/a73/586038-Product-0-I-637831944177653244_467x_prha4t.webp",
@@ -44,7 +44,7 @@
     },
     {
         "name": "samsung z fold4",
-        "itemno": 4,
+        "id": 4,
         "category": "phones",
         "price": 2000,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718532/e-commerce%20app/z-fold/598438-Product-3-I-637946000578069246_467x_ftq8zo.webp",
@@ -58,7 +58,7 @@
     },
     {
         "name": "google pixel 7 pro",
-        "itemno": 5,
+        "id": 5,
         "category": "phones",
         "price": 950,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718199/e-commerce%20app/pixel-7/601382-Product-0-I-638007125267781761_467x_crgi7t.webp",
@@ -71,7 +71,7 @@
     },
     {
         "name": "airpods",
-        "itemno": 6,
+        "id": 6,
         "category": "earphones",
         "price": 200,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718732/e-commerce%20app/Airpods/552130-Product-0-I-637702420685225792_467x_c6ji87.webp",
@@ -85,7 +85,7 @@
     },
     {
         "name": "JBL buds",
-        "itemno": 7,
+        "id": 7,
         "category": "earphones",
         "price": 80,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719500/e-commerce%20app/jbl%20pods/586012-Product-0-I-637825099377217380_467x_gkavai.webp",
@@ -99,7 +99,7 @@
     },
     {
         "name": "samsung buds",
-        "itemno": 8,
+        "id": 8,
         "category": "earphones",
         "price": 180,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718817/e-commerce%20app/earbuds/477033-Product-5-I-637320595273041477_467x_kr5w7q.webp",
@@ -113,7 +113,7 @@
     },
     {
         "name": "beats ear buds",
-       " itemno": 9,
+       " id": 9,
         "category": "earphones",
         "price": 190,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718783/e-commerce%20app/beats%20pods/530674-Product-0-I-637634873301249554_467x_ok8p1q.webp",
@@ -126,7 +126,7 @@
     },
     {
         "name": "beats",
-        "itemno": 10,
+        "id": 10,
         "category": "headphones",
         "price": 250,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718859/e-commerce%20app/beats/475942-Product-3-I-637649741549761283_ae6204bd-cf6c-4fd9-ae6c-ce7f6045d2b8_467x_azzy9u.webp",
@@ -141,7 +141,7 @@
     {
         "name": "beats 2",
         "category": "headphones",
-        "itemno": 11,
+        "id": 11,
         "price": 150,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668719473/e-commerce%20app/beats%20sm/440929-Product-0-I-637229812270999627_467x_mzg9xy.webp",
         "images": [
@@ -153,7 +153,7 @@
     },
     {
         "name": "PS5 god of war ragnarok",
-        "itemno": 12,
+        "id": 12,
         "category": "gaming",
         "price": 800,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723283/e-commerce%20app/ps5/610770-Product-0-I-638031536840629316_467x_osnkyf.webp",
@@ -167,7 +167,7 @@
     },
     {
         "name": "x box series s",
-        "itemno": 13,
+        "id": 13,
         "category": "gaming",
         "price": 300,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668723619/e-commerce%20app/xbox/487922-Product-2-I-637369914513274309_7c511799-3851-4e88-8992-17a0f7fda13e_903x_dvashk.webp",
@@ -185,7 +185,7 @@
     },
     {
         "name": "LG UHD TV",
-        "itemno": 14,
+        "id": 14,
         "category": "tvs",
         "price": 1000,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718657/e-commerce%20app/lg-uhd%20tv/588517-Product-0-I-637852698777739439_903x_hcvvxp.webp",
@@ -198,7 +198,7 @@
     },
     {
         "name": "samsung smart tv",
-        "itemno": 15,
+        "id": 15,
         "category": "tvs",
         "price": 1000,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718681/e-commerce%20app/uhd%20tv/540902-Product-0-I-637729342622752206_903x_hqwgcq.webp",
@@ -213,7 +213,7 @@
     },
     {
         "name": "lenovo thinkpad e15",
-        "itemno": 16,
+        "id": 16,
         "category": "laptops",
         "price": 600,
         "image": "https://res.cloudinary.com/djcxl7oim/image/upload/v1668718588/e-commerce%20app/thinkpad/pw5jy11vn8u0jbi3rdu3aq1ij4bl15411237_nwp2ch.webp",
