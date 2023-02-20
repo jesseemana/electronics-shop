@@ -7,12 +7,10 @@ import { RemoveFromFavs } from '../features/storeSlice';
 
 export const Favs = () => {
   const dispatch = useDispatch();
-
   const storeState = useSelector( ( state ) => state.storeState );
 
-  console.log(storeState)
-
   const [ favs, setFavs ] = useState( [] );
+
 
   useEffect( () => {
     setFavs( storeState.favorites );
@@ -55,7 +53,7 @@ export const Favs = () => {
       <div></div>
       <h1 className='text-lg md:text-2xl text-center text-gray-600 capitalize font-bold'>my wishlist</h1>
 
-      <div className='grid grid-rows md:grid-cols-2 items-center justify-center mb-5 py-5'>
+      <div className='grid grid-rows lg:grid-cols-2 items-center justify-center mb-5 py-5'>
         { favs.map( item =>
         {
           return (

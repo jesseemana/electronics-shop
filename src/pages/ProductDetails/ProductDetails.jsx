@@ -32,22 +32,29 @@ export const ProductDetails = () => {
   const new_dispatch = useDispatch();
   const storeState = useSelector( ( state ) => state.storeState );
 
+  const itemId = state.product.id;
   
   useEffect( () => {
     setFavorites( storeState.favorites );
   }, [ storeState ] );
 
 
+  const item = favorites.find( ( item ) => item.id === itemId );
+  console.log( item );
+  
   useEffect( () => {
-    const itemFound = favorites.filter( ( item ) => item.id === state.product.id );
-
-    if ( itemFound ) {
-      setDuplicate( false );
+    if ( item) {
+      if ( item.itemExists ) {
+        setDuplicate( true );
+      }
     }
-  }, [ favorites ] );
-
-  console.log( favorites );
+  }, [item] );
+  
   console.log( duplicate );
+
+
+  // console.log( favorites );
+  // console.log( storeState );
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
   const activateBtn = state.quantity > 0
@@ -85,7 +92,7 @@ export const ProductDetails = () => {
   // ADDING ITEM TO FAVORITES 
   const handleFavs = (item) => {
     new_dispatch( AddToFavs( item ) );
-    setAddToFavsBtn( false );
+    setDuplicate( true );
     toast.success( 'Added To Favorites' );
   };
 
@@ -163,7 +170,7 @@ export const ProductDetails = () => {
                 add to cart
               </button>
               <button
-                disabled={!addToFavsBtn}
+                disabled={duplicate}
                 className={`${!addToFavsBtn ? 'cursor-not-allowed border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm' : 'border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
                 onClick={ () => handleFavs( state.product ) }
               >
