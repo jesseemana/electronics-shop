@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// ISSUES WITH combineReducers() SO WE COMBINE BOTH FAVORITES AND CART STATE IN ONE SLICE 
 const initialState = {
     favorites: localStorage.getItem( "favoriteItems" ) ? JSON.parse( localStorage.getItem( "favoriteItems" ) ) : [],
+    favExists: false,
     cartItems: localStorage.getItem( "cartItems" ) ? JSON.parse( localStorage.getItem( "cartItems" ) ) : [],
     cartAmount: 0,
     cartQty: 0
@@ -11,13 +13,23 @@ const cartSlice = createSlice( {
     name: 'storeSlice',
     initialState,
     reducers: {
-        AddToFavs ( state, action )
-        {
+        // -------------------------- ACTION CREATORS FOR THE FAVORITES SECTION ----------------------------------
+        // 1. ADD TO FAVORITES 
+        AddToFavs ( state, action ) {
             state.favorites.push( action.payload );
+
             localStorage.setItem( "favoriteItems", JSON.stringify( state.favorites ) );
+        },
+        // 2. REMOVE FROM FAVORITES 
+        RemoveFromFavs ( state, action ) {
+            const newFavorites = state.favorites.filter( items => items.id !== action.payload.id );
+            
+            state.favorites = newFavorites;
+            localStorage.setItem( "favoriteItems", JSON.stringify( state.favorites ) );
+
         }
     }
 } );
 
-export const { AddToFavs } = cartSlice.actions;
+export const { AddToFavs, RemoveFromFavs } = cartSlice.actions;
 export default cartSlice.reducer;

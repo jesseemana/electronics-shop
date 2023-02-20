@@ -1,24 +1,35 @@
-import { useContext, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaAngleRight, FaDotCircle, FaStar, FaStarHalf } from 'react-icons/fa';
+import { FaAngleRight } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+import { RemoveFromFavs } from '../features/storeSlice';
 
 export const Favs = () => {
-  const favorites = useSelector( state => state.storeState );
+  const dispatch = useDispatch();
 
-  const [favs, setFavs] = useState([])
+  const storeState = useSelector( ( state ) => state.storeState );
 
-  useEffect( () =>{
-    setFavs(favorites.favorites)
-  }, [favorites] )
+  console.log(storeState)
+
+  const [ favs, setFavs ] = useState( [] );
+
+  useEffect( () => {
+    setFavs( storeState.favorites );
+  }, [ storeState ] );
   
-  console.log( favs );
-  // console.log( favorites.favorites );
 
   useEffect(() => {
     document.title = 'Favorites';
-  });
+  } );
 
+  const handleRemove = ( item ) => {
+    dispatch( RemoveFromFavs( item ) );
+    toast.error( 'item removed' );
+  };
+  
+
+  // IF THERE ARE NO ITEMS IN THE FAVORITES ARRAY 
   if (favs.length <= 0) {
     return (
       <div className='flex items-center justify-center flex-col p-5 gap-y-4 h-[100vh]'>
@@ -31,13 +42,39 @@ export const Favs = () => {
         </Link>
       </div>
     );
-  }
+  };
 
-  return <div>
-    <div className='flex items-center gap-x-2 py-8 uppercase text-[12px] md:text-sm text-gray-500'>
+  return (
+    <div className='px-8'>
+      <div className='flex items-center gap-x-2 py-8 uppercase text-[12px] md:text-sm text-gray-500'>
         <Link to='/'>home</Link>
         <FaAngleRight/>
         <Link to='/latest'>favorites</Link>
+      </div>
+
+      <div></div>
+      <h1 className='text-lg md:text-2xl text-center text-gray-600 capitalize font-bold'>my wishlist</h1>
+
+      <div className='grid grid-rows md:grid-cols-2 items-center justify-center mb-5 py-5'>
+        { favs.map( item =>
+        {
+          return (
+            <div key={ item.id } className='flex items-center justify-center py-5'>
+              <div className='flex flex-col gap-y-2'>
+                <img src={ item.image } alt={item.name} />
+                <p className='text-gray-500 font-semibold'>{ item.name }</p>
+                <p className='text-[#21ABA5] font-bold'>${ item.price }</p>
+                <button
+                  className='bg-red-600 px-3 py-1 text-[#ffffff] rounded-sm capitalize'
+                  onClick={() => handleRemove( item ) }
+                >
+                  remove  from wishlist
+                </button>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
-  </div>;
+  );
 };

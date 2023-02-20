@@ -1,15 +1,14 @@
-import { useContext, useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { dummydata } from '../../dummydata';
 import { FaAngleRight, FaStar } from 'react-icons/fa';
-import toast from "react-hot-toast";
-import { MainContext } from '../../components/StoreContext';
-import { reducer } from './reducer';
-import { useDispatch } from 'react-redux';
+import { reducer } from './reducer'; 
+import { useDispatch, useSelector } from 'react-redux';
 import { AddToFavs } from '../../features/storeSlice';
+import toast from "react-hot-toast";
 
 
-// INITIAL COMPONENT STATE 
+// INITIAL COMPONENT STATE BEING HANDLED IN A SEPARATE REDUCER FUNCTION IN THE COMPONENT FOLDER
 const initialState = {
   product: {},
   title: '',
@@ -20,12 +19,35 @@ const initialState = {
 }
 
 
+
 export const ProductDetails = () => {
   const { id } = useParams();
+
+  const [ addToFavsBtn, setAddToFavsBtn ] = useState( true );
+  const [ favorites, setFavorites ] = useState( [] );
+  const [ duplicate, setDuplicate ] = useState( false );
+
   const [ state, dispatch ] = useReducer( reducer, initialState );
+  
+  const new_dispatch = useDispatch();
+  const storeState = useSelector( ( state ) => state.storeState );
 
-  const new_dispatch = useDispatch()
+  
+  useEffect( () => {
+    setFavorites( storeState.favorites );
+  }, [ storeState ] );
 
+
+  useEffect( () => {
+    const itemFound = favorites.filter( ( item ) => item.id === state.product.id );
+
+    if ( itemFound ) {
+      setDuplicate( false );
+    }
+  }, [ favorites ] );
+
+  console.log( favorites );
+  console.log( duplicate );
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
   const activateBtn = state.quantity > 0
@@ -56,21 +78,20 @@ export const ProductDetails = () => {
   
 
   // ADDING ITEM TO CART 
-  const handleCart = () => {
+  const handleCart = ( item ) => {
     toast.success( 'added to cart' );
   };
 
   // ADDING ITEM TO FAVORITES 
   const handleFavs = (item) => {
-    new_dispatch( AddToFavs( item) );
+    new_dispatch( AddToFavs( item ) );
+    setAddToFavsBtn( false );
     toast.success( 'Added To Favorites' );
   };
 
-  // console.log(state.product);
-  // console.log(initialState.quantity);
   
   return (
-    <div className='px-8 border-red-500 '>
+    <div className='px-8'>
 
       {/* NAVIGATION  */}
       <div className='flex items-center gap-x-2 py-8 uppercase text-[12px] md:text-sm text-gray-500'>
@@ -119,11 +140,10 @@ export const ProductDetails = () => {
                 {/* // setQuantity(prev => prev - 1) */}
                 <button
                   disabled={ !state.disablebtn }
-                  className='border px-3 rounded-sm'
+                  className={ `${!activateBtn ? 'cursor-not-allowed border px-3 rounded-sm' : 'border px-3 rounded-sm'}`}
                   onClick={ () => dispatch( { type: 'decrement' } ) }>
                   -
                 </button> 
-                {/* <input type="number" placeholder={ mystate.quantity } className='w-[40px] outline-none px-2' /> */ }
                 <p className='outline-none px-2 border'>{ state.quantity }</p>
                 <button
                   className='border px-3 rounded-sm'
@@ -138,12 +158,13 @@ export const ProductDetails = () => {
           <div className='flex gap-x-4'>
               <button
                 className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm'
-                onClick={ () => handleCart }
+                onClick={ () => handleCart( state.product ) }
               >
                 add to cart
               </button>
               <button
-                className='border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'
+                disabled={!addToFavsBtn}
+                className={`${!addToFavsBtn ? 'cursor-not-allowed border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm' : 'border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
                 onClick={ () => handleFavs( state.product ) }
               >
                 add to favorites
