@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
-import { RemoveFromFavs } from '../features/storeSlice';
+import { removeFromFavs } from '../features/storeSlice';
 
 export const Favs = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Favs = () => {
   } );
 
   const handleRemove = ( item ) => {
-    dispatch( RemoveFromFavs( item ) );
+    dispatch( removeFromFavs( item ) );
     toast.error( 'item removed' );
   };
   

@@ -13,25 +13,39 @@ const cartSlice = createSlice( {
     name: 'storeSlice',
     initialState,
     reducers: {
-        // ------------------------------ ACTION CREATORS FOR THE FAVORITES SECTION ------------------------------
-        // 1. ADD TO FAVORITES 
-        AddToFavs ( state, action ) {   
+        // ------------------------------ ACTION CREATORS FOR THE FAVORITES SECTION ------------------------------   
+        addToFavs ( state, action ) {   
             // COPYING THE EXISTING PRODUCT OBJECT THEN ADDING AN itemExists PROPERTY 
             const item = { ...action.payload, itemExists: true };
             state.favorites.push( item );
             
-            localStorage.setItem( "favoriteItems", JSON.stringify( state.favorites ) );
+            localStorage.setItem( 'favoriteItems', JSON.stringify( state.favorites ) );
         },
-        // 2. REMOVE FROM FAVORITES 
-        RemoveFromFavs ( state, action ) {
+        removeFromFavs ( state, action ) {
             const newFavorites = state.favorites.filter( items => items.id !== action.payload.id );
             
             state.favorites = newFavorites;
-            localStorage.setItem( "favoriteItems", JSON.stringify( state.favorites ) );
+            localStorage.setItem( 'favoriteItems', JSON.stringify( state.favorites ) );
 
-        }
+        },
+
+        // ------------------------------ ACTION CREATORS FOR THE CART ------------------------------
+        addToCart ( state, action ) { 
+            const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
+
+            if ( itemIndex >= 0 ) {
+                state.cartItems[itemIndex].itemQuantity += 1
+            } else {
+                const cartProduct = { ...action.payload, itemQuantity: 1 };
+                state.cartItems.push( cartProduct );
+            }
+
+            localStorage.setItem( 'cartItems', JSON.stringify( state.cartItems ) );
+        },
+        removeFromCart(state, action){}
+        
     }
 } );
 
-export const { AddToFavs, RemoveFromFavs } = cartSlice.actions;
+export const { addToFavs, removeFromFavs, addToCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

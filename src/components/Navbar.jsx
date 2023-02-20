@@ -13,7 +13,10 @@ export const Navbar = () => {
 
   useEffect( () => {
     setFavItems( storeState.favorites );
+    setCartItems( storeState.cartItems );
   }, [ storeState ] );
+
+  // console.log(cartItems);
 
 
   return (
@@ -40,7 +43,7 @@ export const Navbar = () => {
           <Link to='/cart' className='flex relative'>
             <AiOutlineShoppingCart className='nav-icons' />
             <span className='text-[12px] bg-[#1D566E] text-[#FFFFFF] rounded-full px-2 absolute bottom-3 left-4'>
-              0
+              { cartItems.length }
             </span>
           </Link>
           <Link to='/user'>

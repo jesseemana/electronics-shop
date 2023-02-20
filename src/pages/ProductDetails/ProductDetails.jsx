@@ -4,7 +4,7 @@ import { dummydata } from '../../dummydata';
 import { FaAngleRight, FaStar } from 'react-icons/fa';
 import { reducer } from './reducer'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { AddToFavs } from '../../features/storeSlice';
+import { addToFavs, addToCart } from '../../features/storeSlice';
 import toast from "react-hot-toast";
 
 
@@ -22,38 +22,33 @@ const initialState = {
 
 export const ProductDetails = () => {
   const { id } = useParams();
-
+  
   const [ favorites, setFavorites ] = useState( [] );
   const [ duplicate, setDuplicate ] = useState( false );
-
   const [ state, dispatch ] = useReducer( reducer, initialState );
   
   const new_dispatch = useDispatch();
   const storeState = useSelector( ( state ) => state.storeState );
 
-  const itemId = state.product.id;
-  
+
   useEffect( () => {
     setFavorites( storeState.favorites );
   }, [ storeState ] );
 
+  
+  const itemId = state.product.id;
 
   const item = favorites.find( ( item ) => item.id === itemId );
   // console.log( item );
   
   useEffect( () => {
-    if ( item) {
+    if ( item ) {
       if ( item.itemExists ) {
         setDuplicate( true );
       }
     }
   }, [item] );
   
-  console.log( duplicate );
-
-
-  // console.log( favorites );
-  // console.log( storeState );
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
   const activateBtn = state.quantity > 0
@@ -85,12 +80,13 @@ export const ProductDetails = () => {
 
   // ADDING ITEM TO CART 
   const handleCart = ( item ) => {
+    new_dispatch( addToCart( item ) );
     toast.success( 'added to cart' );
   };
 
   // ADDING ITEM TO FAVORITES 
   const handleFavs = (item) => {
-    new_dispatch( AddToFavs( item ) );
+    new_dispatch( addToFavs( item ) );
     setDuplicate( true );
     toast.success( 'Added To Favorites' );
   };
