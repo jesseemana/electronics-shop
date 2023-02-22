@@ -41,19 +41,21 @@ export const ProductDetails = () => {
 
   // SETTING DUPLICATE TO TRUE IF THE ITEM ALREADY EXIST IN THE FAVORITES ARRAY 
   const item = favorites.find( ( item ) => item.id === itemId );
-  
-  useEffect( () => {
-    if ( item ) {
-      if ( item.itemExists ) {
-        setDuplicate( true );
-      } 
-    }
-  }, [item] );
-
 
   // SETTING THE CART ITEM COUNT STATE FOR THIS COMPONENT
   const cartItem = storeState.cartItems.find( ( item ) => item.id === itemId );
   const cartItemIndex = storeState.cartItems.findIndex( ( item ) => item.id === itemId );
+  
+  useEffect( () => {
+    if ( item && cartItem ) {
+      if ( item.itemExists && cartItem.itemQuantity ) {
+        setDuplicate( true );
+        setItemQty( cartItem.itemQuantity );
+      }
+    }
+  }, [ item, storeState.cartItems[ cartItemIndex ] ] );
+
+
 
   useEffect( () => {
     if ( cartItem ) {
