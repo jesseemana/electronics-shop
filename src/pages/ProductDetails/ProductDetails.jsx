@@ -5,7 +5,7 @@ import { FaAngleRight, FaStar } from 'react-icons/fa';
 import { reducer } from './reducer'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavs, addToCart, decreaseCart, increaseCart } from '../../features/storeSlice';
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
 
 // INITIAL COMPONENT STATE BEING HANDLED IN A SEPARATE REDUCER FUNCTION IN THE COMPONENT FOLDER
@@ -23,26 +23,22 @@ const initialState = {
 export const ProductDetails = () => {
   const { id } = useParams();
   
-  const [ favorites, setFavorites ] = useState( [] );
-  const [ duplicate, setDuplicate ] = useState( false );
   const [ itemQty, setItemQty ] = useState( 0 );
+  const [ duplicate, setDuplicate ] = useState( false );
   const [ state, dispatch ] = useReducer( reducer, initialState );
   
   const new_dispatch = useDispatch();
   const storeState = useSelector( ( state ) => state.storeState );
 
 
-  useEffect( () => {
-    setFavorites( storeState.favorites );
-  }, [ storeState ] );
 
-  
+  // CREATING A ITEM ID VARIABLE FROM THE COMPONENT STATE COMING FROM THE REDUCER
   const itemId = state.product.id;
 
-  // SETTING DUPLICATE TO TRUE IF THE ITEM ALREADY EXIST IN THE FAVORITES ARRAY 
-  const item = favorites.find( ( item ) => item.id === itemId );
+  // IF THE ITEM ALREADY EXIST IN THE FAVORITES ARRAY SET DUPLICATE TO TRUE
+  const item = storeState.favorites.find( ( item ) => item.id === itemId );
 
-  // SETTING THE CART ITEM COUNT STATE FOR THIS COMPONENT
+  // SETTING THE CART ITEM STATE FOR THIS COMPONENT
   const cartItem = storeState.cartItems.find( ( item ) => item.id === itemId );
   const cartItemIndex = storeState.cartItems.findIndex( ( item ) => item.id === itemId );
   
@@ -54,17 +50,6 @@ export const ProductDetails = () => {
       }
     }
   }, [ item, storeState.cartItems[ cartItemIndex ] ] );
-
-
-
-  useEffect( () => {
-    if ( cartItem ) {
-      // console(item.itemQuantity)
-      if ( cartItem.itemQuantity ) {
-        setItemQty( cartItem.itemQuantity );
-      }
-    }
-  }, [ storeState.cartItems[ cartItemIndex ] ] );
   
 
 
@@ -79,7 +64,6 @@ export const ProductDetails = () => {
     }
   }, [ activateBtn ] ); 
   
-
 
 
   // SETTING COMPONENT STATE COMING FROM THE REDUCER FUNCTION 
@@ -104,6 +88,7 @@ export const ProductDetails = () => {
     toast.success( 'added to cart' );
   };
 
+  
   // ADDING ITEM TO FAVORITES 
   const handleFavs = (item) => {
     new_dispatch( addToFavs( item ) );
