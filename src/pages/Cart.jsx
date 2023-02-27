@@ -1,20 +1,22 @@
-import {useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
 
 export const Cart = () => {
   const [ cart, setCart ] = useState( [] );
-  
+
+  const dispatch = useDispatch();
   const storeState = useSelector( ( state ) => state.storeState );
 
   useEffect( () => {
     setCart( storeState.cartItems );
-  }, [ storeState ] );
+  }, [ storeState.cartItems ] );
 
   useEffect(() => {
     document.title = 'Cart';
   });
+
 
   // console.log( cart );
 
