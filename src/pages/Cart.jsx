@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
+import { decreaseCart, increaseCart } from '../features/storeSlice';
 
 export const Cart = () => {
   const [ cart, setCart ] = useState( [] );
@@ -18,7 +19,7 @@ export const Cart = () => {
   }, []);
 
 
-  // console.log( cart );
+  console.log( cart );
 
 
   if (cart.length === 0) {
@@ -45,8 +46,27 @@ export const Cart = () => {
 
       <h1 className='text-lg md:text-3xl text-center text-gray-600 font-semibold'>CART</h1>
 
-      <div>
-        
+      <div className='py-8 flex flex-col gap-y-10'>
+        { cart.map( ( item ) =>
+        {
+          return (
+            <div key={ item.id } className='flex gap-x-5 md:grid md:grid-cols-4 border py-3 px-2'>
+              <img src={ item.image } alt={ item.name } className='h-[120px] md:h-[180px]' />
+              <div className='flex flex-col gap-y-5'>
+                <h1 className='font-bold text-md md:text-xl text-gray-600' >{ item.name}</h1>
+                <div className='flex flex-col gap-y-5'>
+                  <div className='flex max-h-[30px] gap-x-2 '>
+                    <button onClick={ () => dispatch( decreaseCart( item ) ) } className='border px-3 rounded-sm'>-</button>
+                    <p>{item.itemQuantity }</p>
+                    <button onClick={ () => dispatch( increaseCart( item ) ) } className='border px-3 rounded-sm'>+</button>
+                  </div>
+                  <p className='font-bold text-xl'>${item.price * item.itemQuantity }</p>
+                  <button className='bg-red-600 text-[#ffffff] capitalize w-[100px] md:w-[150px] rounded-sm'>remove </button>
+                </div>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   );
