@@ -23,7 +23,6 @@ const cartSlice = createSlice( {
         },
         removeFromFavs ( state, action ) {
             const newFavorites = state.favorites.filter( items => items.id !== action.payload.id );
-            
             state.favorites = newFavorites;
             localStorage.setItem( 'favoriteItems', JSON.stringify( state.favorites ) );
 
@@ -42,7 +41,11 @@ const cartSlice = createSlice( {
 
             localStorage.setItem( 'cartItems', JSON.stringify( state.cartItems ) );
         },
-        removeFromCart ( state, action ) { },
+        removeFromCart ( state, action ) {
+            const newCart = state.cartItems.filter( ( item ) => item.id !== action.payload.id );
+            state.cartItems = newCart;
+            localStorage.setItem( 'cartItems', JSON.stringify( state.cartItems ) );
+         },
         increaseCart ( state, action ) { 
             const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
 
@@ -50,8 +53,7 @@ const cartSlice = createSlice( {
                 state.cartItems[ itemIndex ].itemQuantity += 1;
             }
         },
-        decreaseCart ( state, action )
-        {
+        decreaseCart ( state, action ) {
             const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
 
             if ( state.cartItems[ itemIndex ].itemQuantity > 1 ) { 
