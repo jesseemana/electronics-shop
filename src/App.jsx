@@ -11,13 +11,16 @@ import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails/ProductDetails';
 import { Toaster } from 'react-hot-toast';
 
+import useSwr from 'swr';
+
 const Phones = lazy( () => './pages/Phones' );
 const Earphones = lazy(() => './pages/EarPhones');
 
 // REACT TOSTIFY 
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [ loading, setLoading ] = useState( true );
+  const {isLoading, data, error} = useSwr()
 
   setTimeout(() => {
     setLoading(false);
