@@ -19,7 +19,7 @@ export const Favs = () => {
 
   useEffect(() => {
     document.title = 'Favorites';
-  } );
+  }, []);
 
   const handleRemove = ( item ) => {
     dispatch( removeFromFavs( item ) );

@@ -15,7 +15,7 @@ export const Cart = () => {
 
   useEffect(() => {
     document.title = 'Cart';
-  });
+  }, []);
 
 
   // console.log( cart );

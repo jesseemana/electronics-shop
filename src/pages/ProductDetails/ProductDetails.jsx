@@ -79,7 +79,7 @@ export const ProductDetails = () => {
   // CHANING PAGE TITLE TO SELECTED ITEM
   useEffect(() => {
     document.title = state.title;
-  });
+  }, []);
   
 
   // ADDING ITEM TO CART 
