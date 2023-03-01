@@ -22,6 +22,14 @@ export const Cart = () => {
     return total.toFixed(2);
   };
 
+  const checkout = async() => {
+    try {
+      
+    } catch (error) {
+      console.log( `Failed to fect data: ${error}`);
+    }
+  }
+
 
   useEffect(() => {
     document.title = 'Cart';
@@ -99,13 +107,11 @@ export const Cart = () => {
             <div className='flex justify-between'>
               <p className='text-lg text-gray-600  font-semibold capitalize'>shipping: </p><span className='text-[#21ABA5]'>${ Number( shippingFee ).toFixed( 2 ) }</span>
             </div>
-            <div className='flex justify-between'>
+            <div className='flex justify-between mt-4 border border-gray-500 border-b-0 border-l-0 border-r-0'>
               <p className='text-lg text-gray-800  font-bold capitalize'>subtotal: </p><span className='text-[#21ABA5]'>${ (Number( shippingFee ) + Number( totalPrice() )).toFixed(2) }</span>
             </div>
           </div>
-          <Link to='/checkout'>
-            <button className='font-bold text-xl uppercase bg-black text-[#ffffff] px-3 rounded-sm'>checkout</button>
-          </Link>
+          <button onClick={checkout} className='font-bold text-xl uppercase bg-black text-[#ffffff] px-3 rounded-sm'>checkout</button>
           <button onClick={() => dispatch(clearCart())} className='bg-red-500 text-[#ffffff] rounded-sm uppercase font-semibold' >clear cart</button>
         </div>
       </div>
