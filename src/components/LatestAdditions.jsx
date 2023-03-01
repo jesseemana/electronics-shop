@@ -19,7 +19,7 @@ export const LatestAdditions = () => {
         </Link>
       </div>
 
-      <div className='flex gap-x-10 py-5 overflow-x-scroll scroll'>
+      <div className='flex gap-x-10 py-5 overflow-x-snap'>
         {dummydata?.map((item) => {
           return (
             <div key={item.id}>

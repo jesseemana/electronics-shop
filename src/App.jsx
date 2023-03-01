@@ -10,6 +10,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductDetails } from './pages/ProductDetails/ProductDetails';
 import { Toaster } from 'react-hot-toast';
+import { Checkout } from './pages/Checkout';
 
 // import useSwr from 'swr';
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path='/user' element={<UserAuth />} />
             <Route path='/favorites' element={<Favs />} />
             <Route path='/latest' element={<Latest />} />
+            <Route path='/checkout' element={<Checkout />} />
             <Route path='/product/:id' element={<ProductDetails />} />
           </Routes>
           <Footer />

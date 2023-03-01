@@ -23,11 +23,14 @@ const initialState = {
 export const ProductDetails = () => {
   const { id } = useParams();
   
+  const [ count, setCount ] = useState( 0 );
   const [ itemQty, setItemQty ] = useState( 0 );
   const [ duplicate, setDuplicate ] = useState( false );
   const [ state, dispatch ] = useReducer( reducer, initialState );
   
-  const new_dispatch = useDispatch();
+
+  // DISPATCHING REDUX ACTIONS SINCE dispatch IS ALREADY IN USE WITH useReducer 
+  const new_dispatch = useDispatch(); 
   const storeState = useSelector( ( state ) => state.storeState );
 
 
@@ -54,7 +57,8 @@ export const ProductDetails = () => {
 
 
   // DISABLING DECREMENT BUTTON IF ITEM QUANTITY IS LESS THAN OR EQUAL TO ZERO 
-  const activateBtn = itemQty > 0
+  // const activateBtn = itemQty > 0
+  const activateBtn = count > 0
 
   useEffect( () => {
     if ( activateBtn ) {
@@ -85,8 +89,22 @@ export const ProductDetails = () => {
   // ADDING ITEM TO CART 
   const handleCart = ( item ) => {
     new_dispatch( addToCart( item ) );
+    setItemQty( count );
     toast.success( 'added to cart' );
   };
+
+  const handleIncrease = () => {
+    setCount( ( prev ) => prev + 1 );
+    // cartItem.itemQuantity = count
+    setItemQty( count );
+  }
+
+
+  const handleDecrease = () => {
+    setCount( ( prev ) => prev - 1 );
+    // cartItem.itemQuantity
+    setItemQty( count );
+  }
 
   
   // ADDING ITEM TO FAVORITES 
@@ -148,31 +166,34 @@ export const ProductDetails = () => {
                 <button
                   disabled={ !state.disablebtn }
                   className={ `${!activateBtn ? 'cursor-not-allowed border px-3 rounded-sm' : 'border px-3 rounded-sm'}`}
-                  onClick={ () => new_dispatch( decreaseCart( item ) ) }>
+                  // onClick={ () => new_dispatch( decreaseCart( item) ) }
+                  onClick={ () => dispatch(decreaseCart(item)) }
+                >
                   -
                 </button> 
                 <p className='outline-none px-2 border'>{ itemQty }</p>
                 <button
                   className='border px-3 rounded-sm'
-                  onClick={ () => new_dispatch( increaseCart( item ) ) }
+                  // onClick={ () => new_dispatch( increaseCart( item ) ) }
+                  onClick={ () => dispatch(increaseCart(item)) }
                 >
                   +
                 </button>
             </div>
           </div>
-
+            
           {/* ADD TO CART AND ADD TO FAVORITES BUTTONS  */ }
             <div>
               <div className='flex gap-x-4'>
                 <button
-                  className='bg-[#21ABA5] text-[#ffffff] capitalize w-full rounded-sm'
-                  onClick={ () => handleCart( state.product ) }
+                  className='bg-[#21ABA5] py-2 text-[#ffffff] capitalize w-full rounded-sm'
+                  onClick={ () => handleCart( state.product, itemQty ) }
                 >
                   add to cart
                 </button>
                 <button
                   disabled={duplicate}
-                  className={`${duplicate ? 'cursor-not-allowed border border-gray-500 text-gray-500 capitalize w-full rounded-sm' : 'border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
+                  className={`${duplicate ? 'cursor-not-allowed py-2 border border-gray-500 text-gray-500 capitalize w-full rounded-sm' : 'py-2 border border-[#21ABA5] text-[#21ABA5] capitalize w-full rounded-sm'}`}
                   onClick={ () => handleFavs( state.product ) }
                 >
                   add to favorites

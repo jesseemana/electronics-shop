@@ -18,7 +18,6 @@ const cartSlice = createSlice( {
             // COPYING THE EXISTING PRODUCT OBJECT THEN ADDING AN itemExists PROPERTY 
             const item = { ...action.payload, itemExists: true };
             state.favorites.push( item );
-            
             localStorage.setItem( 'favoriteItems', JSON.stringify( state.favorites ) );
         },
         removeFromFavs ( state, action ) {
@@ -31,14 +30,12 @@ const cartSlice = createSlice( {
         // ------------------------------ ACTION CREATORS FOR THE CART ------------------------------
         addToCart ( state, action ) { 
             const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
-
             if ( itemIndex >= 0 ) {
                 state.cartItems[itemIndex].itemQuantity += 1
             } else {
                 const cartProduct = { ...action.payload, itemQuantity: 1 };
                 state.cartItems.push( cartProduct );
             }
-
             localStorage.setItem( 'cartItems', JSON.stringify( state.cartItems ) );
         },
         removeFromCart ( state, action ) {
@@ -48,22 +45,23 @@ const cartSlice = createSlice( {
          },
         increaseCart ( state, action ) { 
             const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
-
-            if ( state.cartItems[ itemIndex ].itemQuantity  >= 1 ) {
-                state.cartItems[ itemIndex ].itemQuantity += 1;
+            if ( state.cartItems[itemIndex]  >= 0 ) {
+                item.itemQuantity += 1;
             }
         },
         decreaseCart ( state, action ) {
             const itemIndex = state.cartItems.findIndex( ( item ) => item.id === action.payload.id );
-
-            if ( state.cartItems[ itemIndex ].itemQuantity > 1 ) { 
-                state.cartItems[itemIndex].itemQuantity -= 1
+            if ( state.cartItems[itemIndex] > 0 ) { 
+                item.itemQuantity -= 1
             }
-            
+        },
+        clearCart ( state, action ) {
+            localStorage.setItem( 'cartItems', JSON.stringify( state.cartItems = [] ) );
         }
         
     }
 } );
+
 
 export const {
     addToFavs,
@@ -71,7 +69,8 @@ export const {
     addToCart,
     removeFromCart,
     decreaseCart,
-    increaseCart
+    increaseCart,
+    clearCart
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
